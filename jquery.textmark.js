@@ -48,9 +48,9 @@
         var opts = $.extend({}, $.fn.textmark.defaults, options);
         this.each(function () {
             function update() {
-                var fieldVal = textField.val();
-                label.toggleClass(opts.labelHideClass, !!fieldVal);
-                textField.toggleClass(opts.fieldNotEmptyClass, !!fieldVal);
+                var notEmpty = !!textField.val();
+                label.toggleClass(opts.labelHideClass, notEmpty);
+                textField.toggleClass(opts.fieldNotEmptyClass, notEmpty);
             }
             var textField = $(this);
             var textId = textField.attr('id');
